@@ -1,161 +1,153 @@
-/*
-*
-{
+* {
     margin: 0;
     padding: 0;
     text-align: center;
+    box-sizing: border-box;
 }
 
-h1
-{
-    background-color: #081b31;
-    color:#fff;
-    height:5rem;
-    line-height: 5rem;
-}
-
-choice
-{
-    width: 165px;
-    height: 165px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.choice:hover
-{
-    opacity: 0.5;
-    cursor: pointer;
-    background-color: #081b31;
-}
-
-img
-{
-    height: 150px;
-    width: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-}
-
-.choices
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    margin-top: 5rem;
-}
-
-.score-board
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    margin-top: 3rem;
-    gap: 5rem;
-}
-
-#user-score,#comp-score
-{
-    font-size: 4rem;
-}
-
-.msg-container
-{
-    margin: 5rem;
-}
-
-#msg
-{
-    
-    background-color: #081b31;
-    color: #fff;
-    font-size: 2rem;
-    display: inline;
-    padding: 1rem;
-    border-radius: 1rem;
-}
-*/
-
-
-
-* 
-{
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
-h1 
-{
+h1 {
     background-color: #081b31;
     color: #fff;
     height: 5rem;
     line-height: 5rem;
+    font-size: 2rem;
 }
 
-.choice 
-{
-    height: 165px;
-    width: 165px;
+/* Choices Section */
+.choices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 4rem;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.choice {
+    height: 140px;
+    width: 140px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color 0.3s ease;
 }
 
-.choice:hover
-{
+.choice:hover {
     cursor: pointer;
     background-color: #081b31;
 }
 
-img 
-{
-    height: 150px;
-    width: 150px;
+img {
+    height: 120px;
+    width: 120px;
     object-fit: cover;
     border-radius: 50%;
 }
 
-.choices 
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    margin-top: 5rem;
-}
-
-.score-board 
-{
+/* Score Board */
+.score-board {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2rem;
     margin-top: 3rem;
-    gap: 5rem;
+    gap: 3rem;
+    flex-wrap: wrap; /* Prevents layout breaking */
 }
 
-#user-score,#comp-score 
-{
-    font-size: 4rem;
+.score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.msg-container 
-{
-    margin-top: 5rem;
+#user-score, #comp-score {
+    font-size: 3.5rem;
 }
 
-#msg 
-{
+/* Message Section */
+.msg-container {
+    margin-top: 4rem;
+}
+
+#msg {
     background-color: #081b31;
     color: #fff;
-    font-size: 2rem;
-    display: inline;
-    padding: 1rem;
+    font-size: 1.8rem;
+    display: inline-block;
+    padding: 1rem 2rem;
     border-radius: 1rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+        height: 4rem;
+        line-height: 4rem;
+    }
+
+    .choices {
+        gap: 1.5rem;
+    }
+
+    .choice {
+        height: 120px;
+        width: 120px;
+    }
+
+    img {
+        height: 100px;
+        width: 100px;
+    }
+
+    .score-board {
+        gap: 2rem;
+    }
+
+    #user-score, #comp-score {
+        font-size: 2.5rem;
+    }
+
+    #msg {
+        font-size: 1.5rem;
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+        height: 3.5rem;
+        line-height: 3.5rem;
+    }
+
+    .choices {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .choice {
+        height: 100px;
+        width: 100px;
+    }
+
+    img {
+        height: 90px;
+        width: 90px;
+    }
+
+    .score-board {
+        gap: 1.5rem;
+    }
+
+    #user-score, #comp-score {
+        font-size: 2rem;
+    }
+
+    #msg {
+        font-size: 1.2rem;
+        padding: 0.6rem 1.2rem;
+    }
 }
